@@ -13,4 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MovieController@index');
+//ci mettiamo resource al posto di get
+//al posto di '/' ci andiamo a mettere il path 
+//al posto di index mettiamo solo MovieController
+Route::resource('movies', 'MovieController');
+    //definiamo il valore di questa chiave
+    //la rotta movies.index si chiama ora listafilm
+    
+
+
+Route::get('/', function() {
+    return view('homepage');
+});
